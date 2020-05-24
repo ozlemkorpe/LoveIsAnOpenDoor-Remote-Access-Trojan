@@ -41,10 +41,6 @@ Try whoami, ls etc commands.
 	whoami 
 	```
 
-	```
-	ls
-	```
-
 ## Demonstration
 Checkout the Demonstration.mp4, can be found in current repository. In demonstration, used Kali Linux machine as attacker and Flare as target machine to be able to examine the malware code in target machine.
 
