@@ -2,7 +2,7 @@
 
 
 ## Getting Started
-
+Love is an open dooe is currently developing malware can be used in both Windows, Linux. It can be executed on both 32 and 64-bits systems. After it is executed, it creates connection between attacker and target machine and provides attacker to get control of target systems command line without knowledge of the victim.
 
 
 ### Prerequisites
