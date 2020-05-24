@@ -1,5 +1,3 @@
-# loveisanopendoor-malware
-
 # LoveIsAnOpenDoor Malware (BackDoor)
 
 
