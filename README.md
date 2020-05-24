@@ -13,7 +13,10 @@ Note: You will only need .c files, other files will be recompiled for you attack
 So instead of downloading those file follow the following steps.
 
 - Replace your attacker machine's IP address in LoveIsAnOpenDoor.c and Server.c 
-- Install ming into you attacker device apt-get install mingw64 (Already installed)
+- Install ming into you attacker device 
+	```
+	apt-get install mingw64 
+	```
 - Use following command to compile the Server
 	```
 	gcc Server.c -o Server 
