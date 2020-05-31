@@ -33,14 +33,25 @@ So instead of downloading those file follow the following steps.
 - Execute exe file in target machine.
 - Check for if shell is opened in attacker machine.
 
-## Running the tests
+## Basic Usage 
 If shell is opened you can start executing codes in target machine on your backdoor.
 Try whoami, ls etc commands.
 
 	```
 	whoami 
+	netstat
+	dir
 	```
-
+## Keylogging
+Use following command to start keylogger in target system. It will create a file named windows in the desktop of the target device and holds each key pressed. Hence this software is only for educational purpose, those files are not hidden in the system.
+```
+start_keylog	
+```
+## Persistance
+Gain persistance on the remote system by executing payload in boot time by using following command
+```
+persist
+```
 ## Demonstration
 Checkout the Demonstration.mp4, can be found in current repository. In demonstration, used Kali Linux machine as attacker and Flare as target machine to be able to examine the malware code in target machine.
 
