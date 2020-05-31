@@ -2,7 +2,7 @@
 
 
 ## Getting Started
-
+LoveIsAnOpenDoor is currently developing malware can be used in both Windows, Linux. It can be executed on both 32 and 64-bits systems. After it is executed, it creates connection between attacker and target machine and provides attacker to get control of target systems command line without knowledge of the victim.
 
 
 ### Prerequisites
@@ -37,10 +37,14 @@ So instead of downloading those file follow the following steps.
 If shell is opened you can start executing codes in target machine on your backdoor.
 Try whoami, ls etc commands.
 
-
+	```
+	whoami 
+	```
 
 ## Demonstration
 Checkout the Demonstration.mp4, can be found in current repository. In demonstration, used Kali Linux machine as attacker and Flare as target machine to be able to examine the malware code in target machine.
+
+
 
 ## Authors
 
