@@ -60,11 +60,7 @@ start_keylog
 Gain persistance on the remote system by executing payload in boot time by using following command
 ```
 persist
-```
-## Demonstration
-Checkout the Demonstration.mp4, can be found in current repository. In demonstration, used Kali Linux machine as attacker and Flare as target machine to be able to examine the malware code in target machine.
-
-
+``
 
 ## Authors
 
